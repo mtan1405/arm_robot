@@ -1,0 +1,12 @@
+C:\Users\os\source\repos\arm_robot\bin\Debug\arm_robot.exe.config
+C:\Users\os\source\repos\arm_robot\bin\Debug\arm_robot.exe
+C:\Users\os\source\repos\arm_robot\bin\Debug\arm_robot.pdb
+C:\Users\os\source\repos\arm_robot\obj\Debug\arm_robot.csproj.AssemblyReference.cache
+C:\Users\os\source\repos\arm_robot\obj\Debug\arm_robot.Form1.resources
+C:\Users\os\source\repos\arm_robot\obj\Debug\arm_robot.Properties.Resources.resources
+C:\Users\os\source\repos\arm_robot\obj\Debug\arm_robot.csproj.GenerateResource.cache
+C:\Users\os\source\repos\arm_robot\obj\Debug\arm_robot.csproj.CoreCompileInputs.cache
+C:\Users\os\source\repos\arm_robot\obj\Debug\arm_robot.exe
+C:\Users\os\source\repos\arm_robot\obj\Debug\arm_robot.pdb
+C:\Users\os\source\repos\arm_robot\obj\Debug\arm_robot.Form2.resources
+C:\Users\os\source\repos\arm_robot\obj\Debug\arm_robot.Form3.resources
