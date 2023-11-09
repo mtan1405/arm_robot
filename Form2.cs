@@ -247,7 +247,7 @@ namespace arm_robot
         {
             try
             { 
-            if (caculator.checkJoin(joins[0])) // check whe s
+            if (caculator.checkJoin(joins[0])) // check whe smklmaslfm;ádmfalsmflasml
             {
                 step = caculator.getStep(ref currentJoin, joins[0]);
                     getStringSteps(step.step_1, step.step_2, step.step_3); 
