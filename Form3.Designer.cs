@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbStatusA = new System.Windows.Forms.Label();
             this.lbSatus = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label13 = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@
             this.txtD1_2 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtTheta3_2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.txtY_A = new System.Windows.Forms.TextBox();
@@ -52,7 +52,9 @@
             this.txtX_A = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtZ_A = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbStatusB = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -68,7 +70,6 @@
             this.txtD1_2_1 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.txtTheta3_2_1 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label17 = new System.Windows.Forms.Label();
             this.txtY_B = new System.Windows.Forms.TextBox();
@@ -76,8 +77,10 @@
             this.txtX_B = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txtZ_B = new System.Windows.Forms.TextBox();
-            this.lbStatusA = new System.Windows.Forms.Label();
-            this.lbStatusB = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.lbStA = new System.Windows.Forms.Label();
+            this.lbStB = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -103,6 +106,17 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Điểm A";
+            // 
+            // lbStatusA
+            // 
+            this.lbStatusA.AutoSize = true;
+            this.lbStatusA.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStatusA.ForeColor = System.Drawing.Color.Lime;
+            this.lbStatusA.Location = new System.Drawing.Point(123, 189);
+            this.lbStatusA.Name = "lbStatusA";
+            this.lbStatusA.Size = new System.Drawing.Size(327, 38);
+            this.lbStatusA.TabIndex = 8;
+            this.lbStatusA.Text = "Không thể tính toán ";
             // 
             // lbSatus
             // 
@@ -178,7 +192,6 @@
             this.txtD1_3.Name = "txtD1_3";
             this.txtD1_3.Size = new System.Drawing.Size(236, 27);
             this.txtD1_3.TabIndex = 1;
-            this.txtD1_3.TextChanged += new System.EventHandler(this.txtD1_3_TextChanged);
             // 
             // label15
             // 
@@ -201,7 +214,6 @@
             this.txtTheta3_3.Name = "txtTheta3_3";
             this.txtTheta3_3.Size = new System.Drawing.Size(236, 27);
             this.txtTheta3_3.TabIndex = 5;
-            this.txtTheta3_3.TextChanged += new System.EventHandler(this.txtTheta3_3_TextChanged);
             // 
             // tableLayoutPanel4
             // 
@@ -291,18 +303,6 @@
             this.txtTheta3_2.Name = "txtTheta3_2";
             this.txtTheta3_2.Size = new System.Drawing.Size(236, 27);
             this.txtTheta3_2.TabIndex = 5;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button2.Location = new System.Drawing.Point(586, 646);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(198, 31);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Chuyển đổi ";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -397,6 +397,18 @@
             this.txtZ_A.TabIndex = 5;
             this.txtZ_A.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtD1_KeyPress);
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Location = new System.Drawing.Point(586, 646);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(198, 31);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Chuyển đổi ";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -412,6 +424,17 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Điểm B ";
+            // 
+            // lbStatusB
+            // 
+            this.lbStatusB.AutoSize = true;
+            this.lbStatusB.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStatusB.ForeColor = System.Drawing.Color.Lime;
+            this.lbStatusB.Location = new System.Drawing.Point(137, 189);
+            this.lbStatusB.Name = "lbStatusB";
+            this.lbStatusB.Size = new System.Drawing.Size(327, 38);
+            this.lbStatusB.TabIndex = 9;
+            this.lbStatusB.Text = "Không thể tính toán ";
             // 
             // label1
             // 
@@ -599,18 +622,6 @@
             this.txtTheta3_2_1.Size = new System.Drawing.Size(236, 27);
             this.txtTheta3_2_1.TabIndex = 5;
             // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Location = new System.Drawing.Point(605, 706);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(160, 31);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 2;
@@ -703,33 +714,58 @@
             this.txtZ_B.TabIndex = 5;
             this.txtZ_B.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtD1_KeyPress);
             // 
-            // lbStatusA
+            // button4
             // 
-            this.lbStatusA.AutoSize = true;
-            this.lbStatusA.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStatusA.ForeColor = System.Drawing.Color.Lime;
-            this.lbStatusA.Location = new System.Drawing.Point(123, 189);
-            this.lbStatusA.Name = "lbStatusA";
-            this.lbStatusA.Size = new System.Drawing.Size(340, 39);
-            this.lbStatusA.TabIndex = 8;
-            this.lbStatusA.Text = "Không thể tính toán ";
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button4.Location = new System.Drawing.Point(605, 706);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(160, 31);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // lbStatusB
+            // lbStA
             // 
-            this.lbStatusB.AutoSize = true;
-            this.lbStatusB.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStatusB.ForeColor = System.Drawing.Color.Lime;
-            this.lbStatusB.Location = new System.Drawing.Point(137, 189);
-            this.lbStatusB.Name = "lbStatusB";
-            this.lbStatusB.Size = new System.Drawing.Size(340, 39);
-            this.lbStatusB.TabIndex = 9;
-            this.lbStatusB.Text = "Không thể tính toán ";
+            this.lbStA.AutoSize = true;
+            this.lbStA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStA.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbStA.Location = new System.Drawing.Point(33, 646);
+            this.lbStA.Name = "lbStA";
+            this.lbStA.Size = new System.Drawing.Size(0, 25);
+            this.lbStA.TabIndex = 9;
+            // 
+            // lbStB
+            // 
+            this.lbStB.AutoSize = true;
+            this.lbStB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStB.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbStB.Location = new System.Drawing.Point(973, 649);
+            this.lbStB.Name = "lbStB";
+            this.lbStB.Size = new System.Drawing.Size(0, 25);
+            this.lbStB.TabIndex = 10;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(996, 697);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(160, 31);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1271, 758);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lbStB);
+            this.Controls.Add(this.lbStA);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button2);
@@ -755,6 +791,7 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -810,5 +847,8 @@
         private System.Windows.Forms.TextBox txtZ_B;
         private System.Windows.Forms.Label lbStatusA;
         private System.Windows.Forms.Label lbStatusB;
+        private System.Windows.Forms.Label lbStA;
+        private System.Windows.Forms.Label lbStB;
+        private System.Windows.Forms.Button button1;
     }
 }

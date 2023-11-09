@@ -5,9 +5,9 @@ namespace arm_robot
 {
     internal class Caculator
     {
-        private const double L1 = 10;
-        private const double L2 = 10;
-        private const double L3 = 10;
+        private const double L1 = 0;
+        private const double L2 = 17.3 ;
+        private const double L3 = 14 ;
 
         private const double div_1 = 1000;
         private const double div_2 = 2;
@@ -23,8 +23,8 @@ namespace arm_robot
         private const double Max_The2 = 85;
         private const double Min_The3 = -120;
         private const double Max_The3 = 120;
-        private const double Max_D1 = 45;
-        private const double Min_D1 = 20;
+        private const double Max_D1 = 38;
+        private const double Min_D1 = 20 ;
 
         private const double convertAngle = Math.PI / 180; 
 
@@ -64,7 +64,7 @@ namespace arm_robot
 
             double x, y, a, b, c, d, e, z;
             a = L2 + L3 * Math.Cos(theta3_1);
-            b = -L2 * Math.Sin(theta3_1);
+            b = -L3 * Math.Sin(theta3_1);
             c = xC - L1;
 
             d = L3 * Math.Sin(theta3_1);
@@ -81,7 +81,7 @@ namespace arm_robot
             joins[0].theta3 = theta3_1;
             // MessageBox.Show(((Double) Math.Atan2 (y , x )  * 180/ Math.PI ).ToString() +"~~~" + ((Double)theta3_1 * 180 / Math.PI) . ToString () ) ;
             a = L2 + L3 * Math.Cos(theta3_2);
-            b = -L2 * Math.Sin(theta3_2);
+            b = -L3  * Math.Sin(theta3_2);
             c = xC - L1;
             d = L3 * Math.Sin(theta3_2);
             e = L3 * Math.Cos(theta3_2) + L2;

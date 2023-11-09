@@ -24,7 +24,7 @@ namespace arm_robot
         Step step;
         Join currentJoin;
         MyTopic topic;
-        const int beginningOfZ = 25; 
+        const double beginningOfZ = 22.5 ; 
 
         Join joinMassage;
         public Form2() 
@@ -223,9 +223,10 @@ namespace arm_robot
         private void button5_Click(object sender, EventArgs e)
         {
 
-            Form3 form3 = new Form3 ();
+            
             TransferClasscs.GetInstance().currentJoin = currentJoin;
             TransferClasscs.GetInstance().serial = serialPort1;
+            Form3 form3 = new Form3();
             form3.ShowDialog();
             
         }
@@ -247,7 +248,7 @@ namespace arm_robot
         {
             try
             { 
-            if (caculator.checkJoin(joins[0])) // check whether could compute 
+            if (caculator.checkJoin(joins[0])) // check whethsádfer could compute 
             {
                 step = caculator.getStep(ref currentJoin, joins[0]);
                     getStringSteps(step.step_1, step.step_2, step.step_3); 

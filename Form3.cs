@@ -21,19 +21,21 @@ namespace arm_robot
         Caculator caculator;
         Join currentJoin;
         List<Join> AJoins;
-        List<Join> BJoins; 
+        List<Join> BJoins;
+        byte send = 0; 
         
         
         public Form3() 
         {
             InitializeComponent();
-            transferClasscs = TransferClasscs.Instance;
+            transferClasscs = TransferClasscs.GetInstance () ;
             topic = new MyTopic();
             topic.set(this);
             A = new Point();
             B = new Point();
             caculator = Caculator.GetCaculator();
-            currentJoin = transferClasscs.currentJoin;
+            currentJoin = transferClasscs.currentJoin ;
+            transferClasscs = TransferClasscs.GetInstance();
             AJoins = new List<Join>();
             BJoins = new List<Join>();
             AJoins.Add(new Join());
@@ -71,7 +73,7 @@ namespace arm_robot
         {
 
         }
-        private string getStringSteps(short stepM1, short stepM2, short stepM3, char endOfString = 'e')
+        private string getStringSteps(int stepM1, int stepM2, int stepM3, char endOfString = 'e')
         {
             string str = stepM1.ToString() + " " + stepM2.ToString() + " " + stepM3.ToString() + endOfString.ToString();
             return str;
@@ -90,13 +92,105 @@ namespace arm_robot
 
         private void button4_Click(object sender, EventArgs e)
         {
+            //send to move robot 
+           if (  sendToMove() == 1 ) 
             lockToWaitF(); 
+        }
+        int  sendToMove () 
+        {
+            try
+            {
+
+
+                if (caculator.checkJoin(AJoins[0]))
+                {
+                    Step step = caculator.getStep(ref currentJoin, AJoins[0]);
+                    currentJoin.coppy(AJoins[0]);
+                    // message to user 
+                    lbStA.Text = "A[0] đã được chọn ";
+                   
+                    transferClasscs.serial.Write(getStringSteps(step.step_1, step.step_2, step.step_3, 'f'));
+                   // MessageBox.Show(getStringSteps(step.step_1, step.step_2, step.step_3, 'f'));
+                    send = 2;
+                    return 1;
+                }
+                else
+                {
+                    if (caculator.checkJoin(AJoins[1]))
+                    {
+                        Step step = caculator.getStep(ref currentJoin, AJoins[0]);
+                        currentJoin.coppy(AJoins[1]);
+                        lbStA.Text = "A[1] đã được chọn ";
+                        transferClasscs.serial.Write(getStringSteps(step.step_1, step.step_2, step.step_3, 'f'));
+                        send = 2; 
+                        return 1;
+                    }
+                    else
+                    {
+                        lbStA.Text = "Không hợp lệ";
+                        send = 0;
+                        return 0;
+                    }
+                }
+            } catch (Exception ex)
+            {
+                lbStA.Text = "Exception " + ex.Message;
+                send = 0;
+                return 0; 
+            }
+        }
+        void sendToMove2()
+        {
+            try
+            {
+
+
+                if (caculator.checkJoin(BJoins[0]))
+                {
+                    Step step = caculator.getStep(ref currentJoin, BJoins[0]);
+                    currentJoin.coppy(BJoins[0]);
+                    // message to user 
+                    lbStB.Text = "B[0] đã được chọn ";
+                    transferClasscs.serial.Write(getStringSteps(step.step_1, step.step_2, step.step_3, 's'));
+                    send = 1;
+                }
+                else
+                {
+                    if (caculator.checkJoin(BJoins[1]))
+                    {
+                        Step step = caculator.getStep(ref currentJoin, BJoins[1]);
+                        currentJoin.coppy(BJoins[1]);
+                        lbStB.Text = "B[1] đã được chọn ";
+                        transferClasscs.serial.Write ( getStringSteps( step.step_1, step.step_2, step.step_3, 's') );
+                        send = 1 ; 
+                    }
+                    else
+                    {
+                        lbStB.Text = "Không hợp lệ";
+                        send = 0; 
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lbStB.Text = "Exception " + ex.Message;
+                send = 0; 
+            }
         }
    
 
         void ObserverForm3.CallbaclInterface()
         {
+            if (send == 0 ) 
             unlock();
+            else if (send == 1 )
+            {
+                sendToMove();
+            }else if (send == 2 )
+            {
+                sendToMove2();
+            }
         }
 
         private void Form3_FormClosing(object sender, FormClosingEventArgs e)
@@ -177,14 +271,9 @@ namespace arm_robot
             Theta3.Text = Math.Round (join.theta3,2).ToString() ;
         }
 
-        private void txtD1_3_TextChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void txtTheta3_3_TextChanged(object sender, EventArgs e)
-        {
-
+            send = 0; 
         }
     }
 }
