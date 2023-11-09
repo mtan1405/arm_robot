@@ -247,7 +247,7 @@ namespace arm_robot
         {
             try
             { 
-            if (caculator.checkJoin(joins[0])) // check whether could compute 
+            if (caculator.checkJoin(joins[0])) // check whether could compute 2341ss
             {
                 step = caculator.getStep(ref currentJoin, joins[0]);
                     getStringSteps(step.step_1, step.step_2, step.step_3); 
